@@ -1,0 +1,27 @@
+
+$border: 1px solid $black;
+$box-size: 40px;
+
+.tic-tac-toe-grid {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.left {
+  border-right: $border;
+}
+
+.right {
+  border-left: $border;
+}
+
+.bottom {
+  border-bottom: $border;
+}
+
+.box {
+  height: $box-size;
+  padding: 5% 0;
+  text-align: center;
+  vertical-align: middle;
+}
