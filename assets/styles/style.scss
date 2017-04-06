@@ -3,10 +3,11 @@ body {
   background-color: $background-color;
   color: $font-color;
   margin: 40px auto;
-  max-width: 600px;
+  max-width: 500px;
   text-align: center;
 }
 
-p {
+.banner {
   color: $font-color;
+  font-size: 150%;
  }

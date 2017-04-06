@@ -1,7 +1,8 @@
 'use strict'
 const winLogic = require('./winLogic')
-const linearBoard = new Array(9)
+const linearBoard = new Array(9).fill(undefined)
 let winner
+let gameDone = false
 
 const onSelection = function () {
   // the boxId value double as an index to the linear
@@ -20,17 +21,23 @@ const onSelection = function () {
   // the game is done. If not, then if an unfilled space is clicked on
   // then the linearBoard is populated.
 
-  if (filledSpace.length === 9) {
-    console.log('Game is done. undefined.length is: ', filledSpace.length)
+  if (gameDone) {
+    console.log('Game is done. filledSpace.length is: ', filledSpace.length)
   } else if (linearBoard[index] === undefined) {
     linearBoard[index] = filledSpace.length % 2 > 0 ? 'o' : 'x'
     $(this).text(linearBoard[index])
     winner = winLogic.getWinner(winLogic.getLanes(linearBoard, winLogic.winLanes))
+    console.log('Before winner check. linearBoard contents: ', linearBoard)
     if (winner) {
       console.log(linearBoard[index], ' WINS!')
-    }
-    if (linearBoard.indexOf(undefined) < 0) {
-      console.log('Game is done. indexOf undefined is: ', linearBoard.indexOf(undefined))
+      gameDone = true
+      $('.banner').text(linearBoard[index] + ' WINS!')
+    } else if (!linearBoard.some(e => (e === undefined))) {
+      console.log('some result: ', linearBoard.some((e, i, a) => e === ''))
+      console.log('linearBoard : ', linearBoard)
+      console.log('Game is done. indexOf undefined is: ', linearBoard.indexOf(''))
+      $('.banner').text('Game is tied!')
+      gameDone = true
     }
   }
 }
