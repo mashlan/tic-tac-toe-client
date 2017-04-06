@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>TIC TAC TOE</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,10 +12,47 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+      <section class="authentication">
+        <h1>API Token Auth</h1>
+        <form id="sign-up">
+          <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" name="credentials[email]" id="sign-up-email" placeholder="email">
+          <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Password Confirmation">
+          <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+        </form>
+
+        <form id="sign-in">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" id="sign-in-email" placeholder="email">
+            <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+            <input type="submit" name="submit" value="Sign in!">
+          </fieldset>
+        </form>
+
+        <form id="sign-out">
+          <fieldset>
+            <legend>Sign out!</legend>
+            <input type="submit" name="submit" value="Sign out!">
+          </fieldset>
+        </form>
+
+        <form id="change-password">
+          <fieldset>
+            <legend>Change password!</legend>
+            <input type="password" name="passwords[old]" id="old-password" placeholder="Old Password">
+            <input type="password" name="passwords[new]" id="new-password" placeholder="New Password">
+            <input type="submit" name="submit" value="Change password!">
+          </fieldset>
+        </form>
+      </section>
+
       <h1>TIC TAC TOE</h1>
-
-      <p>this game</p>
-
+      <br>
+      <h2 class="banner">Let's Play!</h2>
       <br>
       <br>
       <section class="tic-tac-toe-grid">

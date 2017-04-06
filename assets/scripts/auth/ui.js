@@ -30,7 +30,6 @@ const signOutFailure = (error) => {
 
 const changePasswordSuccess = () => {
   console.log('changePasswordSuccess ran')
-  store.user = null
 }
 
 const changePasswordFailure = (error) => {
