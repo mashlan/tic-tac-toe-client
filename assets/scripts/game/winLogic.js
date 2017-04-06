@@ -34,8 +34,14 @@ const getLanes = function (tray, array) {
   return lanes
 }
 
+const getWinner = function (array) {
+  console.log('indexOf xxx: ', array.indexOf('xxx'), ' indexOf ooo: ', array.indexOf('ooo'))
+  return array.indexOf('xxx') > -1 || array.indexOf('ooo') > -1
+}
+
 module.exports = {
   winLanes,
   ticTacToe,
-  getLanes
+  getLanes,
+  getWinner
 }
