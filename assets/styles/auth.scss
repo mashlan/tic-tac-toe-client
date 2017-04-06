@@ -1,0 +1,18 @@
+
+.authentication {
+  text-align: left;
+}
+
+legend {
+  color: $font-color;
+  padding-top: 10px;
+}
+
+[type=submit] {
+  background: $white;
+  border: 0 none;
+  border-radius: 5px;
+  color: $font-color;
+  cursor: pointer;
+  padding: 5px 15px;
+}
