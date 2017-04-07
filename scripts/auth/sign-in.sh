@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#EMAIL=test PASSWORD=test sh scripts/sign-in.sh
+#EMAIL=test PASSWORD=test sh scripts/auth/sign-in.sh
 API="${API_ORIGIN:-http://localhost:4741}"
   URL_PATH="/sign-in"
   curl "${API}${URL_PATH}" \
