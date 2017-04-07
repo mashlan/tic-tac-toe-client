@@ -10,4 +10,9 @@ body {
 .banner {
   color: $font-color;
   font-size: 150%;
+  text-transform: capitalize;
+ }
+
+.btn:focus {
+  outline: 0;
  }
