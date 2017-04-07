@@ -19,9 +19,19 @@ const updateFailure = (error) => {
   console.error('updateFailure ran:', error)
 }
 
+const getStatsSuccess = (data) => {
+  console.log('getStatsSuccess ran: ', data)
+  // store.games = data.games
+}
+const getStatsFailure = (error) => {
+  console.error('getStatsFailure ran:', error)
+}
+
 module.exports = {
   createSuccess,
   createFailure,
   updateSuccess,
-  updateFailure
+  updateFailure,
+  getStatsSuccess,
+  getStatsFailure
 }

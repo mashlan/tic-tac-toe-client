@@ -86,9 +86,17 @@ const onSelection = function (event) {
   }
 }
 
+const onGetGameStats = function (event) {
+  event.preventDefault()
+  api.getStats()
+    .then(ui.getStatsSuccess)
+    .catch(ui.getStatsFailure)
+}
+
 const addHandlers = () => {
-  $('.btn').on('click', onStartNewGame)
+  $('.new-game').on('click', onStartNewGame)
   $('.box').on('click', onSelection)
+  $('.game-stats').on('click', onGetGameStats)
 }
 module.exports = {
   addHandlers

@@ -26,6 +26,17 @@ const updateGame = (data) => {
   })
 }
 
+const getStats = () => {
+  console.log('I am in getStats. store is :', store)
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 // const changePassword = (data) => {
 //   console.log('changePassword ran - store is: ', store)
 //   return $.ajax({
@@ -40,5 +51,6 @@ const updateGame = (data) => {
 
 module.exports = {
   createGame,
-  updateGame
+  updateGame,
+  getStats
 }
