@@ -21,6 +21,8 @@ const updateFailure = (error) => {
 
 const getStatsSuccess = (data) => {
   console.log('getStatsSuccess ran: ', data)
+  store.gameStats = data.games
+  console.log('gestStatusSuccess store.gameStats: ', store)
   // store.games = data.games
 }
 const getStatsFailure = (error) => {
