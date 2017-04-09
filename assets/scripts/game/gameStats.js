@@ -1,5 +1,6 @@
 'use strict'
-const showTtlGames = function () {
+const showTtlGames = function (games) {
+
 }
 
 const showTtlGamesCompleted = function () {
@@ -18,10 +19,15 @@ const showTtlGamesLost = function () {
 
 }
 
+const displayGameStats = function (games) {
+  $('#all-games').text('Total Games Played: ' + games.length)
+}
+
 module.exports = {
   showTtlGames,
   showTtlGamesCompleted,
   showTtlGamesAbandoned,
   showTtlGamesWon,
-  showTtlGamesLost
+  showTtlGamesLost,
+  displayGameStats
 }

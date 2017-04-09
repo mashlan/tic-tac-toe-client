@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const gameStats = require('./gameStats')
 
 const createSuccess = (data) => {
   console.log('createSuccess ran')
@@ -23,7 +24,7 @@ const getStatsSuccess = (data) => {
   console.log('getStatsSuccess ran: ', data)
   store.gameStats = data.games
   console.log('gestStatusSuccess store.gameStats: ', store)
-  // store.games = data.games
+  gameStats.displayGameStats(store.gameStats)
 }
 const getStatsFailure = (error) => {
   console.error('getStatsFailure ran:', error)
