@@ -23,8 +23,10 @@ const getTtlGamesWon = function (games) {
   return allGamesWon
 }
 
-const showTtlGamesLost = function () {
-
+const getTtlGamesLost = function (games) {
+  let allGamesLost = []
+  allGamesLost = getTtlGamesFinished(games).filter(e => !winLogic.getWinner(e.cells))
+  return allGamesLost
 }
 
 const displayGameStats = function (games) {
@@ -32,10 +34,10 @@ const displayGameStats = function (games) {
   $('#total-games-finished').text('Total Games Finished: ' + getTtlGamesFinished(games).length)
   $('#total-games-abandoned').text('Total Games Abandoned: ' + getTtlGamesAbandoned(games).length)
   $('#total-games-won').text('Total Games Won: ' + getTtlGamesWon(games).length)
+  $('#total-games-lost').text('Total Games Lost: ' + getTtlGamesLost(games).length)
 }
 
 module.exports = {
   showTtlGames,
-  showTtlGamesLost,
   displayGameStats
 }
