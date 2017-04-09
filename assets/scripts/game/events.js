@@ -1,5 +1,5 @@
 'use strict'
-const winLogic = require('./winLogic')
+const winLogic = require('../lib/winLogic')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -68,7 +68,7 @@ const onSelection = function (event) {
     filledSpace.push(token)
     $(this).text(token)
 
-    winnerExists = winLogic.getWinner(winLogic.getLanes(linearBoard, winLogic.winLanes))
+    winnerExists = winLogic.getWinner(linearBoard)
 
     if (winnerExists) {
       gameDone = true
@@ -86,9 +86,17 @@ const onSelection = function (event) {
   }
 }
 
+const onGetGameStats = function (event) {
+  event.preventDefault()
+  api.getStats()
+    .then(ui.getStatsSuccess)
+    .catch(ui.getStatsFailure)
+}
+
 const addHandlers = () => {
-  $('.btn').on('click', onStartNewGame)
+  $('.new-game').on('click', onStartNewGame)
   $('.box').on('click', onSelection)
+  $('.game-stats').on('click', onGetGameStats)
 }
 module.exports = {
   addHandlers

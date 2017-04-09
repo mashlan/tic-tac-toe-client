@@ -49,15 +49,11 @@
           </fieldset>
         </form>
       </section>
-      <br>
-      <br>
-      <button type="button" class="btn btn-primary btn-lg new-game-button">Start a New Game</button>
-      <br>
 
-      <br>
+      <button type="button" class="btn btn-primary btn-lg new-game">Start a New Game</button>
+
       <h1 class="banner">Let's Play!</h1>
-      <br>
-      <br>
+
       <section class="tic-tac-toe-grid">
       <div class="row bottom">
         <div id="box2" class="col-xs-4 box left"></div>
@@ -75,5 +71,13 @@
         <div id="box6" class="col-xs-4 box right"></div>
       </div>
     </section>
+  <section class="game-stats">
+      <button type="button" class="btn btn-primary btn-lg games-started-button">Get Games Played</button>
+      <p id="all-games"></p>
+      <p id="total-games-finished"></p>
+      <p id="total-games-abandoned"></p>
+      <p id="total-games-won"></p>
+      <p id="total-games-lost"></p>
+  </section>
     </body>
 </html>
