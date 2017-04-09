@@ -1,7 +1,10 @@
 'use strict'
-// The following is to aid in console testing the function
+// The following comments are to help in console/node testing the function
+// temporarily export function to test individually in node
 // const tray = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-// const game = require('./assets/scripts/winLogic.js')
+// const game = require('./assets/scripts/game/winLogic.js')
+// winning lane coord: [ '147', '258', '369', '123', '456', '789', '159', '357' ]
+// const tray = ['x','o','x','x','o','o','x','o','x']
 
 // the following array holds all the possible winning lanes for the game
 const winLanes = [
@@ -26,22 +29,20 @@ const ticTacToe = (tray, coords) =>
 
 // function to loop through winLanes to create an array of 3 character
 // strings to check for wins or ties.
-const getLanes = function (tray, array) {
+const getLanes = function (tray) {
   const lanes = []
-  for (let i = 0; i < array.length; i++) {
-    lanes.push(ticTacToe(tray, array[i]))
+  for (let i = 0; i < winLanes.length; i++) {
+    lanes.push(ticTacToe(tray, winLanes[i]))
   }
   return lanes
 }
 
-const getWinner = function (array) {
-  console.log('indexOf xxx: ', array.indexOf('xxx'), ' indexOf ooo: ', array.indexOf('ooo'))
-  return array.indexOf('xxx') > -1 || array.indexOf('ooo') > -1
+const getWinner = function (tray) {
+  const lanes = getLanes(tray)
+  // console.log('indexOf xxx: ', lanes.indexOf('xxx'), ' indexOf ooo: ', lanes.indexOf('ooo'))
+  return lanes.indexOf('xxx') > -1 || lanes.indexOf('ooo') > -1
 }
 
 module.exports = {
-  winLanes,
-  ticTacToe,
-  getLanes,
   getWinner
 }

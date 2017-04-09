@@ -68,7 +68,7 @@ const onSelection = function (event) {
     filledSpace.push(token)
     $(this).text(token)
 
-    winnerExists = winLogic.getWinner(winLogic.getLanes(linearBoard, winLogic.winLanes))
+    winnerExists = winLogic.getWinner(linearBoard)
 
     if (winnerExists) {
       gameDone = true
