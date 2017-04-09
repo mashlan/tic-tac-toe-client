@@ -1,5 +1,5 @@
 'use strict'
-const winLogic = require('./winLogic')
+const winLogic = require('../lib/winLogic')
 const api = require('./api')
 const ui = require('./ui')
 
