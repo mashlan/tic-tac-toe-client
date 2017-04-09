@@ -1,19 +1,15 @@
 'use strict'
 const winLogic = require('../lib/winLogic')
 
-const showTtlGames = function (games) {
-
-}
-
 const getTtlGamesFinished = function (games) {
   const allGamesFinished = games.filter(e => e.over)
-  console.log('all games finished: ', allGamesFinished)
+  // console.log('all games finished: ', allGamesFinished)
   return allGamesFinished
 }
 
 const getTtlGamesAbandoned = function (games) {
   const allGamesAbandoned = games.filter(e => !e.over)
-  console.log('all games finished: ', allGamesAbandoned)
+  // console.log('all games finished: ', allGamesAbandoned)
   return allGamesAbandoned
 }
 
@@ -38,6 +34,5 @@ const displayGameStats = function (games) {
 }
 
 module.exports = {
-  showTtlGames,
   displayGameStats
 }
