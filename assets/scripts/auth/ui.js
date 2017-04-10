@@ -14,6 +14,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (data) => {
+  $('.alert').hide()
   $('#sign-in').trigger('reset')
   $('.authentication').hide()
   store.user = data.user
@@ -29,7 +30,6 @@ const signInFailure = (error) => {
   $('#global-alert-danger').show()
 }
 const signOutSuccess = () => {
-  console.log('signOutSuccess ran')
   store.user = null
   $('.alert').hide()
   $('.authentication').show()
