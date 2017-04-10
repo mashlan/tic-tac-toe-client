@@ -22,8 +22,8 @@ const updateSuccess = (data) => {
   store.game = data.game
 }
 const updateFailure = (error) => {
-  $('#alertMessage').text(' Cannot save move.')
-  $('.alert').show()
+  $('#alert-danger-message').text(' Cannot save move.')
+  $('.alert-danger').show()
 }
 
 const getStatsSuccess = (data) => {
@@ -33,8 +33,8 @@ const getStatsSuccess = (data) => {
   gameStats.displayGameStats(store.gameStats)
 }
 const getStatsFailure = (error) => {
-  $('#alertMessage').text(' Cannot get game statistics.')
-  $('.alert').show()
+  $('#alert-danger-message').text(' Cannot get game statistics.')
+  $('.alert-danger').show()
 }
 
 module.exports = {
