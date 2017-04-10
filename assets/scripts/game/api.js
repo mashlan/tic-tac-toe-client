@@ -3,7 +3,6 @@ const config = require('../config')
 const store = require('../store')
 
 const createGame = () => {
-  console.log('I am in createGame')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
@@ -14,7 +13,6 @@ const createGame = () => {
 }
 
 const updateGame = (data) => {
-  console.log('I am in updateGame. store is :', store)
   const game = store.game
   return $.ajax({
     url: config.apiOrigin + '/games/' + game.id,
@@ -27,7 +25,6 @@ const updateGame = (data) => {
 }
 
 const getStats = () => {
-  console.log('I am in getStats. store is :', store)
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'GET',
