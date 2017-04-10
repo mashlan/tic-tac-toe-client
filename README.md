@@ -68,11 +68,11 @@ in those two different scopes of work together due to the time crunch.
 
 
 ## User Stories
--   [Spreadsheet with user stories] (https://drive.google.com/open?id=1JQ75G0IxGLu3HlFi_2D7e7Izc0_7nW45IE8v4qeNjkw)
+(https://drive.google.com/open?id=1JQ75G0IxGLu3HlFi_2D7e7Izc0_7nW45IE8v4qeNjkw)
 
 
 ## Wireframes
--   [Slide deck with wireframes] (https://drive.google.com/open?id=1vc7G2eOTmCbDvsQd_2jnym0QP2-w8-Z2JD2Eoei6hsA)
+ (https://drive.google.com/open?id=1vc7G2eOTmCbDvsQd_2jnym0QP2-w8-Z2JD2Eoei6hsA)
 
 
 
