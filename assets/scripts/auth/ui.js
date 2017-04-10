@@ -2,7 +2,6 @@
 const store = require('../store')
 
 const signUpSuccess = (data) => {
-  console.log('signUpSuccess ran: ', data)
   $('.alert').hide()
   $('.alert-success').show()
   $('#alert-success-message').text(' Account created. Sign in for Tic Tac Toe.')
@@ -10,7 +9,6 @@ const signUpSuccess = (data) => {
 }
 
 const signUpFailure = (error) => {
-  console.error('signUpFailure ran: ', error)
   $('#alert-danger-message').text(' Email already exists.')
   $('#global-alert-danger').show()
 }
@@ -23,11 +21,9 @@ const signInSuccess = (data) => {
   $('.nav').show()
   $('.game-options').show()
   $('.not-signed-in').hide()
-  console.log('signInSuccess ran: ', store)
 }
 
 const signInFailure = (error) => {
-  console.error('signInFailure ran:', error)
   $('.alert').hide()
   $('#alert-danger-message').text(' Email or password is incorrect.')
   $('#global-alert-danger').show()
@@ -60,7 +56,6 @@ const changePasswordSuccess = () => {
 }
 
 const changePasswordFailure = (error) => {
-  console.error('changePasswordFailure ran:', error)
   $('#alertMessage').text(' Cannot change password.')
   $('.alert').show()
 }
