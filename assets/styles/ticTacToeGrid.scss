@@ -2,6 +2,13 @@
 $border: 1px solid $black;
 $box-size: 40px;
 
+.banner {
+  font-size: 150%;
+  margin: 40px;
+  text-align: center;
+  text-transform: capitalize;
+ }
+
 .tic-tac-toe-grid {
   display: none;
   margin: 0 auto;

@@ -1,21 +1,19 @@
 
-// body {
-//   background-color: $background-color;
-//   color: $font-color;
-//   margin: 40px auto;
-//   max-width: 600px;
-//   text-align: center;
-// }
+.nav {
+  display: none;
+}
+
+.alert {
+  display:none;
+}
 
 .game-options {
   display: none;
 }
 
-.banner {
-  color: $font-color;
-  font-size: 150%;
-  text-transform: capitalize;
- }
+.btn-lg {
+  margin: 40px auto;
+}
 
 .btn:focus {
   outline: 0;

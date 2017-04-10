@@ -6,17 +6,29 @@ const ui = require('./ui')
 let linearBoard = new Array(9)
 
 let gameDone = false
+let nextToken = 'o'
 let token = 'x'
 let gameDelta = {}
 let winnerExists = false
 let filledSpace = []
 
+const onGoHome = function () {
+  $('.alert').hide()
+  $('.authentication').hide()
+  $('.account-change').hide()
+  $('.game-options').show()
+  $('.jumbotron').show()
+  $('.tic-tac-toe-grid').hide()
+  $('.game-stats').hide()
+}
 const onStartNewGame = function (event) {
   // initialize variables. start with a clean slate
   event.preventDefault()
+  $('.game-options').hide()
   gameDone = false
   winnerExists = false
   token = 'x'
+  nextToken
   gameDelta = {}
   filledSpace
   linearBoard = new Array(9)
@@ -64,9 +76,11 @@ const onSelection = function (event) {
     console.log('Game is done. filledSpace.length is: ', filledSpace.length)
   } else if (linearBoard[index] === undefined) {
     token = filledSpace.length % 2 > 0 ? 'o' : 'x'
+    nextToken = filledSpace.length % 2 > 0 ? 'x' : 'o'
     linearBoard[index] = token
     filledSpace.push(token)
     $(this).text(token)
+    $('.banner').text(nextToken + "'s turn")
 
     winnerExists = winLogic.getWinner(linearBoard)
 
@@ -88,15 +102,25 @@ const onSelection = function (event) {
 
 const onGetGameStats = function (event) {
   event.preventDefault()
+  $('.alert').hide()
+  $('.authentication').hide()
+  $('.account-change').hide()
+  $('.game-options').hide()
+  $('.jumbotron').hide()
+  $('.tic-tac-toe-grid').hide()
+  $('.game-stats').show()
   api.getStats()
     .then(ui.getStatsSuccess)
     .catch(ui.getStatsFailure)
 }
 
 const addHandlers = () => {
-  $('.new-game').on('click', onStartNewGame)
+  $('.home-nav').on('click', onGoHome)
+  $('.new-game-button').on('click', onStartNewGame)
+  $('.new-game-nav').on('click', onStartNewGame)
   $('.box').on('click', onSelection)
-  $('.game-stats').on('click', onGetGameStats)
+  $('.game-stats-button').on('click', onGetGameStats)
+  $('.game-stats-nav').on('click', onGetGameStats)
 }
 module.exports = {
   addHandlers
