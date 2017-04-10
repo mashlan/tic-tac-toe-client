@@ -8,8 +8,11 @@ legend {
   padding-top: 10px;
 }
 
+.account-change {
+  display: none;
+}
+
 [type=submit] {
-  background: $white;
   border: 0 none;
   border-radius: 5px;
   color: $font-color;
