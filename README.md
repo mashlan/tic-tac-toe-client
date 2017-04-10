@@ -15,7 +15,7 @@
 - Nav bar does not collapse into the hamburger menu when in
   smaller media sizes.
 
-- Form validation and ajax api failure messing needs to be styled
+- Form validation and ajax api failure messaging needs to be styled
   more consistently with each other.
 
 - Code could be refactored to be more organized. I want
@@ -68,11 +68,11 @@ in those two different scopes of work together due to the time crunch.
 
 
 ## User Stories
- - [Spreadsheet with user stories] (https://drive.google.com/open?id=1JQ75G0IxGLu3HlFi_2D7e7Izc0_7nW45IE8v4qeNjkw)
+-   [Spreadsheet with user stories] (https://drive.google.com/open?id=1JQ75G0IxGLu3HlFi_2D7e7Izc0_7nW45IE8v4qeNjkw)
 
 
 ## Wireframes
-- [Slide deck with wireframes] (https://drive.google.com/open?id=1vc7G2eOTmCbDvsQd_2jnym0QP2-w8-Z2JD2Eoei6hsA)
+-   [Slide deck with wireframes] (https://drive.google.com/open?id=1vc7G2eOTmCbDvsQd_2jnym0QP2-w8-Z2JD2Eoei6hsA)
 
 
 
