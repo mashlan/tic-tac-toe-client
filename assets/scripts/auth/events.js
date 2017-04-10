@@ -7,10 +7,20 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
+  const password = $('#sign-up-password').val()
+  const passwordConfirmation = $('#sign-up-password-confirmation').val()
+  console.log('password: ', password, ' confirmation: ', passwordConfirmation)
+
   event.preventDefault()
-  api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+  if (password !== passwordConfirmation) {
+    console.log('password: ', password, ' confirmation: ', passwordConfirmation)
+    $('#alert-danger-message').text(' Please enter matching passwords.')
+    $('.alert-danger').show()
+  } else {
+    api.signUp(data)
+      .then(ui.signUpSuccess)
+      .catch(ui.signUpFailure)
+  }
 }
 
 const onSignIn = function (event) {
@@ -30,18 +40,38 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+const onGoToChangePassword = function () {
+  $('.jumbotron').hide()
+  $('.game-options').hide()
+  $('.account-change').show()
+  $('.nav').show()
+  $('.alert').hide()
+  $('.authentication').hide()
+  $('.jumbotron').hide()
+  $('.tic-tac-toe-grid').hide()
+  $('.game-stats').hide()
+}
 const onChangePassword = function (event) {
   const data = getFormFields(this)
+  const oldPassword = $('#old-password').val()
+  const newPassword = $('#new-password').val()
   event.preventDefault()
-  console.log('onChangePassword ran!')
-  api.changePassword(data)
-    .then(ui.changePasswordSuccess)
-    .catch(ui.changePasswordFailure)
+
+  if (oldPassword === newPassword) {
+    console.log('password: ', oldPassword, ' confirmation: ', newPassword)
+    $('#alert-danger-message').text(' Old password and new password cannot be the same.')
+    $('.alert-danger').show()
+  } else {
+    api.changePassword(data)
+      .then(ui.changePasswordSuccess)
+      .catch(ui.changePasswordFailure)
+  }
 }
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
+  $('.sign-out-nav').on('click', onSignOut)
+  $('.change-password-nav').on('click', onGoToChangePassword)
   $('#change-password').on('submit', onChangePassword)
 }
 
