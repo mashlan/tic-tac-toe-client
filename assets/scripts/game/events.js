@@ -73,7 +73,6 @@ const onSelection = function (event) {
   // then the linearBoard is populated.
 
   if (gameDone) {
-    console.log('Game is done. filledSpace.length is: ', filledSpace.length)
   } else if (linearBoard[index] === undefined) {
     token = filledSpace.length % 2 > 0 ? 'o' : 'x'
     nextToken = filledSpace.length % 2 > 0 ? 'x' : 'o'
@@ -91,9 +90,7 @@ const onSelection = function (event) {
       $('.banner').text('Game is tied!')
       gameDone = true
     }
-    console.log('filledSpace length: ', filledSpace.length)
     gameDelta = createGameDelta(index, token, gameDone)
-    console.log('gameDelta : ', gameDelta)
     api.updateGame(gameDelta)
       .then(ui.updateSuccess)
       .catch(ui.updateFailure)

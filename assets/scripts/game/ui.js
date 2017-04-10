@@ -19,28 +19,22 @@ const createFailure = (error) => {
 
 const updateSuccess = (data) => {
   $('.alert').hide()
-  console.log('updateSuccess ran')
   store.game = data.game
-  console.log(store.game)
 }
 const updateFailure = (error) => {
   $('#alertMessage').text(' Cannot save move.')
   $('.alert').show()
-  console.error('updateFailure ran:', error)
 }
 
 const getStatsSuccess = (data) => {
   $('.alert').hide()
   $('.tic-tac-toe-grid').hide()
-  console.log('getStatsSuccess ran: ', data)
   store.gameStats = data.games
-  console.log('gestStatusSuccess store.gameStats: ', store)
   gameStats.displayGameStats(store.gameStats)
 }
 const getStatsFailure = (error) => {
   $('#alertMessage').text(' Cannot get game statistics.')
   $('.alert').show()
-  console.error('getStatsFailure ran:', error)
 }
 
 module.exports = {
