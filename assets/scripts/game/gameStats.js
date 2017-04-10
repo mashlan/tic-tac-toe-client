@@ -26,7 +26,7 @@ const getTtlGamesLost = function (games) {
 }
 
 const displayGameStats = function (games) {
-  $('#all-games').text('Total Games Played: ' + games.length)
+  $('#all-games').text('Total Games Started: ' + games.length)
   $('#total-games-finished').text('Total Games Finished: ' + getTtlGamesFinished(games).length)
   $('#total-games-abandoned').text('Total Games Abandoned: ' + getTtlGamesAbandoned(games).length)
   $('#total-games-won').text('Total Games Won: ' + getTtlGamesWon(games).length)
