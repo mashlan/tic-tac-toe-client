@@ -9,11 +9,9 @@ const onSignUp = function (event) {
   const data = getFormFields(this)
   const password = $('#sign-up-password').val()
   const passwordConfirmation = $('#sign-up-password-confirmation').val()
-  console.log('password: ', password, ' confirmation: ', passwordConfirmation)
 
   event.preventDefault()
   if (password !== passwordConfirmation) {
-    console.log('password: ', password, ' confirmation: ', passwordConfirmation)
     $('#alert-danger-message').text(' Please enter matching passwords.')
     $('.alert-danger').show()
   } else {
@@ -26,7 +24,6 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('sign-in ran!')
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -35,7 +32,6 @@ const onSignIn = function (event) {
 const onSignOut = function (event) {
   // const data = getFormFields(this)
   event.preventDefault()
-  console.log('sign-out ran!')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
@@ -58,7 +54,6 @@ const onChangePassword = function (event) {
   event.preventDefault()
 
   if (oldPassword === newPassword) {
-    console.log('password: ', oldPassword, ' confirmation: ', newPassword)
     $('#alert-danger-message').text(' Old password and new password cannot be the same.')
     $('.alert-danger').show()
   } else {
